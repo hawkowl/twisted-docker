@@ -1,0 +1,14 @@
+FROM
+
+
+RUN pip install buildbot-slave
+RUN groupadd -r buildslave && adduser --ingroup=buildslave buildslave
+RUN mkdir /buildslave && chown buildslave:buildslave /buildslave
+
+USER buildslave
+WORKDIR /buildslave
+
+RUN buildslave create-slave . buildbot.twistedmatrix.com:9987 <botname> <password>
+
+ENTRYPOINT ["/usr/local/bin/buildslave"]
+CMD ["start", "--nodaemon"]

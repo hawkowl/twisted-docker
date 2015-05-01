@@ -1,0 +1,14 @@
+FROM debian:7
+
+# Requirements for building CPython + the pip modules we want
+RUN apt-get install -y libffi-dev libssl-dev libncurses5-dev libexpat1-dev \
+ libsqlite3-dev zlib1g-dev libbz2-dev build-essential curl wget llvm \
+ libreadline-dev make
+
+# LOCALEZ
+RUN apt-get install -y locales
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
