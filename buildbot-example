@@ -1,5 +1,5 @@
-FROM
-
+# Change this to change the base container
+FROM hawkowl/debian7-py27
 
 RUN pip install buildbot-slave
 RUN groupadd -r buildslave && adduser --ingroup=buildslave buildslave
