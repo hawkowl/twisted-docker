@@ -5,7 +5,7 @@ RUN apt-get update
 # Requirements for building CPython + the pip modules we want
 RUN apt-get install -y libffi-dev libssl-dev libncurses5-dev libexpat1-dev \
  libsqlite3-dev zlib1g-dev libbz2-dev build-essential curl wget llvm \
- libreadline-dev make git
+ libreadline-dev make git python-pip python-dev
 
 # LOCALEZ
 RUN apt-get install -y locales
