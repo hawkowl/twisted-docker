@@ -1,0 +1,12 @@
+FROM hawkowl/debian8
+
+RUN git clone https://github.com/yyuu/pyenv.git /pyenv
+
+RUN echo "Installing 3.5.0a4..."
+RUN cd /pyenv/plugins/python-build/../.. && git pull
+RUN PYENV_ROOT=/pyenv /pyenv/bin/pyenv install 3.5.0a4
+
+RUN ln -s /pyenv/versions/3.5.0a4/bin/python3 /usr/bin/python3.5
+
+RUN python3.5 -m pip install pyopenssl service_identity zope.interface idna
+RUN python3.5 -m pip install coverage
