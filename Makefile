@@ -5,7 +5,7 @@ all:
 	docker build -t hawkowl/debian7-py33 - < debian7-py33
 	docker build -t hawkowl/debian7-py34 - < debian7-py34
 	docker build -t hawkowl/debian7-py35 - < debian7-py35
-	docker build -t hawkowl/debian7-pypy25 - < debian-pypy25
+	docker build -t hawkowl/debian7-pypy25 - < debian7-pypy25
 
 	docker build -t hawkowl/debian8 - < debian8
 	docker build -t hawkowl/debian8-py27 - < debian8-py27
