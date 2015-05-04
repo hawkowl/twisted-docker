@@ -1,0 +1,10 @@
+FROM hawkowl/debian7
+
+RUN mkdir /pypy
+RUN wget https://bitbucket.org/squeaky/portable-pypy/downloads/pypy-2.5.1-1-linux_x86_64-portable.tar.bz2 -O pypy.tar.bz2
+RUN tar xf -C /pypy --strip-components=1 pypy.tar.bz2
+
+RUN ln -s /pypy/bin/pypy /usr/bin/pypy
+
+RUN pypy -m pip install pyopenssl service_identity zope.interface idna
+RUN pypy -m pip install coverage
