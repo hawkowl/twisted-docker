@@ -2,7 +2,7 @@ all:
 	echo "ok"
 	docker build -t hawkowl/debian7 - < debian7
 	docker build -t hawkowl/debian7-py27 - < debian7-py27
-	docker build -t hawkowl/debian8-py33 - < debian8-py33
+	docker build -t hawkowl/debian7-py33 - < debian7-py33
 	docker build -t hawkowl/debian7-py34 - < debian7-py34
 	docker build -t hawkowl/debian7-py35 - < debian7-py35
 
