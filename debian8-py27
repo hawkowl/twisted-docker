@@ -3,5 +3,6 @@ FROM hawkowl/debian8
 # Python 2.7
 RUN apt-get install -y git python-pip python-dev libgmp3-dev
 
+RUN pip install setuptools
 RUN pip install -U pyopenssl service_identity idna gmpy pyasn1 pycrypto soappy pyserial
 RUN pip install coverage
