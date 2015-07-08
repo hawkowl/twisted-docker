@@ -3,7 +3,8 @@ FROM hawkowl/debian7
 # Python 2.7
 RUN apt-get install -y git python-pip python-dev libgmp3-dev
 
-RUN pip install -U distribute
+RUN rm -rf /usr/lib/python2.7/dist-packages/distribute-0.6.24dev_r0.egg-info
+
 RUN pip install -U setuptools
 RUN pip install -U zope.interface pyopenssl service_identity idna gmpy pyasn1 pycrypto soappy pyserial
 RUN pip install coverage
