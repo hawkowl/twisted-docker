@@ -19,13 +19,9 @@ hawkowl-bots:
 	docker build -t debian7-py34-twbuildbot - < debian7-py34-twbuildbot
 	docker build -t debian7-py35-twbuildbot - < debian7-py35-twbuildbot
 	docker build -t debian7-pypy25-twbuildbot - < debian7-pypy25-twbuildbot
-
 	docker build -t debian8-py27-twbuildbot - < debian8-py27-twbuildbot
 
-
-start-hawkowl-bots: kill-hawkowl-bots
+start-hawkowl-bots:
 	docker run -d debian7-py27-twbuildbot
 	docker run -d debian7-py33-twbuildbot
 	docker run -d debian7-py34-twbuildbot
-	docker run -d debian7-py35-twbuildbot
-	docker run -d debian7-pypy25-twbuildbot
