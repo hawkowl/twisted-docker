@@ -10,3 +10,4 @@ RUN ln -s /pyenv/versions/3.4.3/bin/python3 /usr/bin/python3.4
 
 RUN python3.4 -m pip install pyopenssl service_identity zope.interface idna
 RUN python3.4 -m pip install coverage virtualenv
+RUN python3.4 -m pip install -U pip
